@@ -112,7 +112,7 @@ export default function Sculpture() {
         alt={sculpture.alt}
       />
       <p>
-        {sculpture.description}
+        ({sculpture.description})
       </p>
         </>
     )
