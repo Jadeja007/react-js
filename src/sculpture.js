@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+//data
 export const sculptureList = [{
     name: 'Homenaje a la Neurocirugía',
     artist: 'Marta Colvin Andrade',
