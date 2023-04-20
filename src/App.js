@@ -1,4 +1,5 @@
 import './App.css';
+import BucketList from './Example/BucketList';
 import MyProfile, { Toolbar } from './Profile';
 import {RenderList} from './RenderList';
 import Sculpture from './sculpture';
@@ -11,7 +12,8 @@ function App() {
        {/* <MyProfile /> */}
         {/* <RenderList /> */}
       {/* <Toolbar /> */}
-      <Sculpture />
+      {/* <Sculpture /> */}
+      <BucketList />
       </header>
     </div>
   );
