@@ -4,18 +4,23 @@ import './App.css';
 // import {RenderList} from './RenderList';
 // import Sculpture from './sculpture';
 import TodoApp from './todo/TodoApp';
+import PasswordField from './Example/Hooks/useState'
+import UseReducerFn from "./Example/Hooks/useReducer";
+import React from 'react';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
+        < PasswordField />
        {/* <h1>App</h1> */}
        {/* <MyProfile /> */}
         {/* <RenderList /> */}
       {/* <Toolbar /> */}
       {/* <Sculpture /> */}
       {/* <BucketList /> */}
-      <TodoApp />
+      {/* <TodoApp /> */}
+      <UseReducerFn  />
       </header>
     </div>
   );
