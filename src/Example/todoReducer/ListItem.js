@@ -1,14 +1,16 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { TasksContext, TasksDispatchContext } from "./context";
 
+function ListItem() {
+  const list = useContext(TasksContext);
 
-function ListItem({ list, onChange, onDelete }) {
   return (
     <div>
       <ul>
         {list.map((item) => {
           return (
             <li key={item.id}>
-              <Task list={item} onChange={onChange} onDelete={onDelete}/>
+              <Task list={item} />
             </li>
           );
         })}
@@ -19,32 +21,66 @@ function ListItem({ list, onChange, onDelete }) {
 
 export default ListItem;
 
-
-function Task({ list, onChange, onDelete }) {
+function Task({ list }) {
   let EditContent;
+
+  const dispatch = useContext(TasksDispatchContext);
 
   const [isEdit, setIsEdit] = useState(false);
 
   if (isEdit) {
     EditContent = (
       <>
-        <input value={list.text} onChange={(e) => {onChange({...list, text: e.target.value})}}/>
-        <button onClick={()=> setIsEdit(false)}> Save </button>
+        <input
+          value={list.text}
+          onChange={(e) => {
+            dispatch({
+              type: "Editing",
+              list: {
+                ...list,
+                text: e.target.value,
+              },
+            });
+          }}
+        />
+        <button onClick={() => setIsEdit(false)}> Save </button>
       </>
-  )} else {
+    );
+  } else {
     EditContent = (
       <>
-      {list.text}
-      <button onClick={()=>setIsEdit(true)}> Edit </button>
+        {list.text}
+        <button onClick={() => setIsEdit(true)}> Edit </button>
       </>
-    )
+    );
   }
 
   return (
     <>
-      <input type="checkbox" checked={list.done} onChange={(e) => onChange({...list, done: e.target.checked})}/>
+      <input
+        type="checkbox"
+        checked={list.done}
+        onChange={(e) =>
+          dispatch({
+            type: "Editing",
+            list: {
+              ...list,
+              done: e.target.checked,
+            },
+          })
+        }
+      />
       {EditContent}
-      <button onClick={()=>onDelete(list.id)}>Delete</button>
+      <button
+        onClick={() =>
+          dispatch({
+            type: "Delete",
+            id: list.id,
+          })
+        }
+      >
+        Delete
+      </button>
     </>
   );
 }
