@@ -3,16 +3,17 @@ import './App.css';
 // import MyProfile, { Toolbar } from './Profile';
 // import {RenderList} from './RenderList';
 // import Sculpture from './sculpture';
-import TodoApp from './todo/TodoApp';
-import PasswordField from './Example/Hooks/useState'
+// import TodoApp from './todo/TodoApp';
+// import PasswordField from './Example/Hooks/useState'
 import UseReducerFn from "./Example/Hooks/useReducer";
 import React from 'react';
+import Home from './Example/todoReducer/Home';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        < PasswordField />
+        {/* < PasswordField /> */}
        {/* <h1>App</h1> */}
        {/* <MyProfile /> */}
         {/* <RenderList /> */}
@@ -20,7 +21,8 @@ function App() {
       {/* <Sculpture /> */}
       {/* <BucketList /> */}
       {/* <TodoApp /> */}
-      <UseReducerFn  />
+      {/* <UseReducerFn  /> */}
+      <Home />
       </header>
     </div>
   );
