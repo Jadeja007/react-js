@@ -5,9 +5,11 @@ import './App.css';
 // import Sculpture from './sculpture';
 // import TodoApp from './todo/TodoApp';
 // import PasswordField from './Example/Hooks/useState'
-import UseReducerFn from "./Example/Hooks/useReducer";
+// import UseReducerFn from "./Example/Hooks/useReducer";
 import React from 'react';
-import Home from './Example/todoReducer/Home';
+// import RefEx from './Example/Hooks/Ref';
+import Effect from './Example/Hooks/Effect';
+// import Home from './Example/todoReducer/Home';
 
 function App() {
   return (
@@ -22,7 +24,9 @@ function App() {
       {/* <BucketList /> */}
       {/* <TodoApp /> */}
       {/* <UseReducerFn  /> */}
-      <Home />
+      {/* <Home /> */}
+      {/* <RefEx /> */}
+      <Effect />
       </header>
     </div>
   );
